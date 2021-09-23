@@ -1,6 +1,6 @@
 # DAN-Net
 ------
-paper:DAN-Net: [Dual-Domain Adaptive-Scaling Non-local Network for CT Metal Artifact Reduction](https://arxiv.org/abs/2102.08003)
+paper:DAN-Net: [Dual-Domain Adaptive-Scaling Non-local Network for CT Metal Artifact Reduction](https://iopscience.iop.org/article/10.1088/1361-6560/ac1156)
 
 by Tao Wang [scuer_wt@scu.stu.edu.cn](scuer_wt@scu.stu.edu.cn).
 This repository implements DAN-Net by Pytorch for metal artifacts reduction (MAR) in CT images. We re-implement the reconstruction layer according to the formulas in DuDoNet and we used Numba in Python to achieve parallel computing.
