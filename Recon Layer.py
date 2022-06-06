@@ -129,7 +129,7 @@ def RECON(x):
     for i in range(1,l):
         data_1 = x[i]
         data_1 = data_1.squeeze(0)
-        data_ = myFunction_for_grad.apply(data1)
+        data_ = myFunction_for_grad.apply(data_1)
         data_ = data_.unsqueeze(0)
         data_ = data_.unsqueeze(0)
         data = torch.cat((data,data_),dim=0)
