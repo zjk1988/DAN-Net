@@ -38,8 +38,12 @@ def proj_forward(sinogram):
     fourier_filter_ = torch.cat((fourier_filter_,fourier_filter_),-1)
     
     
-    projection = torch.rfft(sinogram, 2, onesided=False).double() * fourier_filter_.double()
-    proj_ifft = torch.irfft(projection, 2, onesided=False).float()
+#     projection = torch.rfft(sinogram, 2, onesided=False).double() * fourier_filter_.double()
+#     proj_ifft = torch.irfft(projection, 2, onesided=False).float()
+    output_fft_new = torch.fft.fft2(sinogram, dim=(-2, -1))
+    projection = torch.stack((output_fft_new.real, output_fft_new.imag), -1).double()* fourier_filter_.double()
+    proj_ifft = torch.fft.ifft2(torch.complex(projection[..., 0], projection[..., 1]), dim=(-2, -1)).float()
+
     
     proj_ifft = proj_ifft.contiguous()
     
