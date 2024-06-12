@@ -10,7 +10,7 @@ from numba import jit,vectorize
 
 #######################################
 ##forward
-
+#updata pytorch
 from numba import cuda,float32
 
 @cuda.jit
